@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Home | Nirnay Sheshware{% endblock %}
+{% block content %}
+<div class="p-5 mb-4 bg-primary text-light rounded-3 shadow">
+    <div class="container py-3">
+        <h1 class="display-5 fw-bold">Hi, I'm Nirnay Sheshware</h1>
+        <p class="lead">Full‑Stack Developer | Python Specialist | Dark Theme Lover</p>
+        <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-lg">Connect</a>
+    </div>
+</div>
+
+<section id="projects">
+    <h2 class="mb-4 text-info">Latest GitHub Projects</h2>
+    <div class="row gy-4">
+    {% for p in projects %}
+        <div class="col-md-4">
+            <div class="card h-100 border-info bg-secondary text-light shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title"><a class="link-light" href="{{ p.url }}" target="_blank">{{ p.name }}</a></h5>
+                    <p class="card-text">{{ p.desc }}</p>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p>No projects to display.</p>
+    {% endfor %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Contact | Nirnay Sheshware{% endblock %}
+{% block content %}
+<h2 class="text-info">Contact Me</h2>
+<form action="{{ url_for('contact') }}" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label for="name" class="form-label">Name</label>
+        <input class="form-control bg-dark text-light border-info" id="name" name="name" required>
+    </div>
+    <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control bg-dark text-light border-info" id="email" name="email" required>
+    </div>
+    <div class="col-12">
+        <label for="message" class="form-label">Message</label>
+        <textarea class="form-control bg-dark text-light border-info" id="message" name="message" rows="5" required></textarea>
+    </div>
+    <div class="col-12">
+        <button class="btn btn-info" type="submit">Send</button>
+    </div>
+</form>
+{% endblock %}
